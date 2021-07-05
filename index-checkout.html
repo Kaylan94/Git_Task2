@@ -1,0 +1,475 @@
+<!--
+    html for online store contact page
+-->
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Check Out</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <script src="https://kit.fontawesome.com/5c2194ea1d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/styling-online-store-contact.css"/>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/JavaScript/scipt.js"></script>
+        
+        <style>
+            #cart{
+              position: relative;
+              margin-left: 95%;
+              margin-top: 1%;
+              color:whitesmoke;
+              cursor: pointer;
+            }
+            #cart:before{
+              content: attr(data-count);
+              position: absolute;
+              color:whitesmoke;
+              right: 26px;
+              text-align: center;
+              top: -12px;
+              width: 20px;
+              height: 20px;
+              background: red;
+              border-radius: 50%;
+              opacity: 0;
+            }
+            #cart.zero:before{
+              opacity: 1;
+            }
+            .checkOutCart{
+              width:100%;
+              height: 580px;
+              border-radius: 5px;
+              background: #222;
+              position: relative;
+              color:ghostwhite;
+              overflow-y:auto;
+              margin: auto;
+            }
+            .checkOutCart div table{
+              width:100%;
+              height:290px;
+              table-layout: fixed;
+              display:table;
+              padding: 5px;
+              border: 1px solid #222;
+              position: relative;
+              margin: 5px auto;
+              color:ghostwhite;
+              column-width: 22%;
+            }
+            
+            .checkOutCart div table .img-thumbnail .img-fluid {
+                max-width: 100%;
+                height:auto;
+            }
+            #img-skyhawk{
+                height: 250px;
+                width: 160px;
+            }
+            .checkOutCart div h6,
+            .checkOutCart div button {
+              position:relative;
+              color:rgb(255, 255, 255);
+              background: rgb(168, 4, 4);
+            }
+            .checkOutCart div button {
+              cursor: pointer;
+              color:rgb(255, 255, 255);
+              background: rgb(168, 4, 4);
+              text-align:center;
+            }
+            #orderTotal{
+                padding-left: 20px;
+            }
+            #checkOut{
+              position:relative;
+              color:rgb(255, 255, 255);
+              background: rgb(4, 168, 31);
+              height:40px;
+              font-weight: bold;
+              cursor: pointer;
+              display: none;
+            }
+            /*.checkOutCart div span{
+              display:contents;
+            }*/
+            .addToCart {
+              cursor: pointer;
+              color:rgb(255, 255, 255);
+              background: rgb(168, 4, 4);
+            }
+            #prodHeading{
+                text-align: center;
+                color: #222;
+            }
+            .amt {
+              float:right;
+            }
+            .invHr {
+              width: 100%;
+              height: 5px;
+              background-color: grey;
+            }
+            .container .f {
+              text-align: left;
+              padding-left: 20px;
+            }
+            
+          </style>
+    </head>
+
+    <body onload="loadCartContent()">
+        <div class="page-wrap">
+            <div class="grid-container">
+                <div class="header">
+                    
+                <!-- Navbar Menu -->
+
+                <!-- Below nav class with links is used for page navigation -->
+                    <nav class="main-nav" role="navigation">
+                    <!-- Unordered list of items to be displayed as nav items -->
+                        <ul class="main-menu">
+                            <!-- Icons added here from fontawesome.
+                                 aria-hidden set to true because these are used purely for aesthetic -->
+                            <li><a href="index-home.html"><i class="fas fa-home aria-hidden=true"></i>&nbsp; HOME|</a></li>
+                            <li><a href="index-shop.html"><i class="fas fa-shopping-cart aria-hidden=true"></i>&nbsp; SHOP|</a></li>
+                            <li><a href="index-home.html"><i class="fas fa-fire"></i>&nbsp; WHAT'S HOT?|</a></li>
+                            <li><a href="index-about.html"><i class="fas fa-hand-spock"></i>&nbsp; ABOUT US|</a></li>
+                            <li><a href="index-contact.html"><i class="fas fa-at"></i>&nbsp; CONTACT|</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Heading -->
+                <div id="landingBar" class="landingBar">
+                    <div class="col-md-12">
+                        <h1 id="theHeading" class="checkOut"><b>Check Out</b></h1>
+                    </div>
+                </div>
+            </div>
+            <!--This is a page break-->
+            <br>
+            <!--This inserts a horizontal line accros the page, styling in css file-->
+            <div class="line-dec"></div>
+            <!--a box class is used here to group the content and style it individually in the css file-->
+            <div class="box f">
+                <h1 id="company-label"><b>Techrown Solutions (Pty)Ltd</b></h1> 
+                <br>
+                <br>Techrown Solutions is a privately owned South African company that is managed by a diverse and skilled team that comprehends 
+                    the importance of building strong business relationships in order to realize long-term success. Techrown endeavors 
+                    to inspire generations while embracing excellence, integrity and innovation. Techrown prides itself on its 
+                    invigorating, hard-working culture and industry competitiveness.
+                    <br>
+                    <br>
+                    <strong>The price and availability of items at Techrown are subject to change. 
+                            The Cart is a temporary place to store a list of your items and reflects 
+                            each item's most recent price. </strong>      
+            </div>
+
+            <br>
+            <div class="line-dec"></div>
+            <br>
+            <br>
+            <div class="wrapper" id="main-content">
+            
+            <!-- Classes row, container and col-mb- are used in conjuction with tags form, 
+            input, and fieldset to create a horizontal input form. -->
+            <div class="container">
+                <h1 id="prodHeading"><b>Your Products</b></h1>
+                <br>
+                <div class="checkOutCart">
+                
+                </div>
+                <br>
+                <div class="line-dec"></div>
+                <br>
+                <br>
+            <!--form heading-->
+            <div class="section-heading" >
+              <h2><b>Please fill in the required info below</b></h2>
+            </div>
+
+            <!--row and column classes below are used to specify the number of columns each should take up 
+                as well as the layout-->
+            <div class="row">
+              <div class="right-content">
+                <div class="container">
+                  <form id="deliveryDetails" >
+                    <div class="row">
+                      <div class="col-md-6">
+                        <fieldset>
+                          <!--below elements are used to give the form's input fields their properties-->
+                          <input
+                            name="name"
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Your name..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="email"
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            placeholder="Your email..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="phoneNumber"
+                            type="text"
+                            class="form-control"
+                            id="phone"
+                            placeholder="Phone Number..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="alternativeNumber"
+                            type="text"
+                            class="form-control"
+                            id="altPhone"
+                            placeholder="Alternative Phone Number..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="address1"
+                            type="text"
+                            class="form-control"
+                            id="address1"
+                            placeholder="Address (Street)..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="address2"
+                            class="form-control"
+                            id="address2"
+                            placeholder="Address (Area)..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="address3"
+                            class="form-control"
+                            id="address3"
+                            placeholder="Address (City)..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="address4"
+                            class="form-control"
+                            id="address4"
+                            placeholder="Address (Postal Code)..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6" id="delivery method">
+                        <br>
+                        <p><b>Please select preferred delivery method</b></p>
+                        <!--Radio type button is used below to allow the user to click/choose 
+                            the approppriate option.
+                            Below is the properties for the radio input-->
+                        <input 
+                            type="radio"
+                            id="deliver"
+                            name="deliverMethod"
+                            value="freight"
+                        />
+                        <label for="deliver"><b>Delivery</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="collect"
+                            name="deliverMethod"
+                            value="collect"
+                        />
+                        <label for="collect"><b>Collection</b></label>
+                      </div>
+                      <div class="col-md-6">
+                        <br>
+                        <p><b>Please select payment method</b></p>
+                        <input 
+                            type="radio"
+                            id="account"
+                            name="payment method"
+                            value="account"
+                        />
+                        <label for="account"><b>Account</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="cash"
+                            name="payment method"
+                            value="cash"
+                        />
+                        <label for="cash"><b>Cash</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="creditCard"
+                            name="payment method"
+                            value="creditCard"
+                        />
+                        <label for="creaditCard"><b>Credit Card</b></label>
+                      </div>
+                      <div class="col-md-6">
+                        <br>
+                        <p><b>Do you have a coupon?</b></p>
+                        <input 
+                            type="radio"
+                            id="couponYes"
+                            name="coupon"
+                            value="yes"
+                        />
+                        <label for="couponYes"><b>Yes</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="couponNo"
+                            name="coupon"
+                            value="no"
+                        />
+                        <label for="couponNo"><b>No</b></label>
+                      </div>
+                      <div class="col-md-6" id="couponAvailable">
+                        <br>
+                        <p><b>Please enter coupon code</b></p>
+                        <fieldset>
+                            <input
+                              name="coupon Code"
+                              class="form-control"
+                              id="couponCode"
+                              placeholder="Coupon Code..."
+                            />
+                          </fieldset>
+                        <br>
+                      </div>
+                      <div class="col-md-12">
+                          <!--a submit button is use here to submit the form.
+                              also includes its caption-->
+                          <button id="formSubmit" class="button" >
+                            Submit
+                          </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div id="invoiceDiv" class="box f">
+              <div class="section-heading">
+                <h2>Invoice</h2>
+              </div>
+              <br>
+              <br>
+              
+            </div>
+          </div>
+        </section>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="page-footer unique-color-dark pt-4">
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-6 mt-md-0 mt-3">
+
+                            <!-- Content -->
+                            <h5 class="text-uppercase"><b>Techcrown Solutions</b></h5>
+                            <p id="company-paragraph">
+                                Techrown is a privately owned South African company that is managed by a diverse and skilled team that 
+                                comprehends the importance of building strong business relationships in order to realize long-term success. 
+                                Techrown endeavors to inspire generations while embracing excellence, integrity and innovation. Techrown 
+                                prides itself on its invigorating, hard-working culture and industry competitiveness.
+                            </p>
+                
+                        </div>
+                        <!-- Grid column -->
+                
+                        <hr class="clearfix w-100 d-md-none pb-3">
+                
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+                
+                            <!-- Links -->
+                            <h5 class="text-uppercase">Links</h5>
+                    
+                            <ul class="list-unstyled">
+                                <li>
+                                <a href="index-home.html">Home</a>
+                                </li>
+                                <li>
+                                <a href="index-shop.html">Shop</a>
+                                </li>
+                                <li>
+                                <a href="index-about.html">about us</a>
+                                </li>
+                                <li>
+                                <a href="index-contact.html">Contact us</a>
+                                </li>
+                            </ul>
+                
+                        </div>
+                        <!-- Grid column -->
+                
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+                
+                            <!-- Contact details -->
+                            <h5 class="text-uppercase">Contact</h5>
+                    
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <i class="fas fa-home mr-3"></i> Meredale, JHB 2091, GP</p>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> techrown@yahoo.com</p>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> +27 83 397 8547</p>
+
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+                <!-- Footer Links -->
+            </footer>
+        </div>
+    </body>
+</html>

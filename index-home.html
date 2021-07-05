@@ -1,0 +1,376 @@
+<!--
+    html for online store home page
+-->
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Techrown Solutions</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <script src="https://kit.fontawesome.com/5c2194ea1d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/styling-online-store.css"/>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="assets/JavaScript/scipt.js"></script>
+
+        <style>
+            input{
+                height: 25px;
+                width: 130px;
+                border-radius: 3px;
+                background:floralwhite;
+                font-weight:500;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="page-wrap">
+            <div class="grid-container">
+                <div class="header">
+
+                <!-- Navbar Menu -->
+
+                <!-- Below nav class with links is used for page navigation -->
+                    <nav class="main-nav" role="navigation">
+                    <!-- Unordered list of items to be displayed as nav items -->
+                        <ul class="main-menu">
+                            <!-- Icons added here from fontawesome.
+                                 aria-hidden set to true because these are used purely for aesthetic -->
+                            <li><a href="#home"><i class="fas fa-home aria-hidden=true"></i>&nbsp; HOME|</a></li>
+                            <!-- <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#home">HOME|</a></li> -->
+                            <li><a href="index-shop.html"><i class="fas fa-shopping-cart aria-hidden=true"></i>&nbsp; SHOP|</a></li>
+                            <li><a href="#whats-hot"><i class="fas fa-fire"></i>&nbsp; WHAT'S HOT?|</a></li>
+                            <li><a href="index-about.html"><i class="fas fa-hand-spock"></i>&nbsp; ABOUT US|</a></li>
+                            <li><a href="index-contact.html"><i class="fas fa-at"></i>&nbsp; CONTACT|</a></li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li>
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; <b>LOGIN/SIGN UP|</b>&nbsp;
+                                <input id="usernameInput" placeholder="username">
+                                <input id="passwordInput" placeholder="password">
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Heading -->
+                <div id="landingBar" class="landingBar">
+                    <div class="col-md-12">
+                        <h1 id="theHeading"><b>Techrown Solutions</b></h1>
+                    </div>
+                </div>
+
+                <!-- Slideshow container -->
+                <div class="fling-minislide">
+                    <!--Photo by Ehimetalor Akhere Unuabonaon 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"-->
+                    <img src="assets/images/control-akhere-unuabona--unsplash.jpg" class="img-fluid" alt="Slide 8">
+                    
+                    <!--Photo by Yuhan Chang on 
+                    "https://unsplash.com/s/photos/drones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"-->
+                    <img src="assets/images/drone-unsplash.jpg" class="img-fluid" alt="Slide 7">
+                    <!--Photo by George Prentzas on 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"-->
+                    <img src="assets/images/print-george-prentzas-unsplash.jpg" class="img-fluid" alt="Slide 6">
+                    
+                    <!--Photo by Luca Bravo on 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" -->
+                    <img src="assets/images/pccode-luca-bravo-unsplash.jpg" class="img-fluid" alt="Slide 5">
+
+                    <!--Photo by Franki Chamaki on 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"-->
+                    <img src="assets/images/data-franki-chamaki-unsplash.jpg" class="img-fluid" alt="Slide 4"> 
+
+                    <!--Photo by Rafael Pol on 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                    -->
+                    <img src="assets/images/pcinner-rafael-pol-unsplash.jpg" class="img-fluid" alt="Slide 3">
+                    
+                    <!--Photo by Kevin Ku on 
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" -->
+                    <img src="assets/images/glasses-kevin-ku-unsplash.jpg" class="img-fluid" alt="Slide 2">
+
+                    <!--Photo by Daniel Josef on
+                    "https://unsplash.com/s/photos/technology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" 
+                    -->
+                    <img src="assets/images/hdd-by-patrick-lindenberg-unsplash.jpg" class="img-fluid" alt="Slide 1">
+                </div>
+                <!--This inserts a line break-->
+                <br>
+                <br>
+                <!--This inserts a horizontal line accros the page, styling in css file-->
+                <div class="line-dec"></div>
+                <br>
+                <br>
+                
+                <!--The class wrapper is used here to wrap and style the main content of the webpage-->
+                <div class="wrapper" id="main-content">
+                    <!--The box class here is used as a container for each element of the home page
+                        i.e the three concepts, aside, trending.. etc. 
+                        This is also used for styling of each box and its contents-->
+                    <div class="box a" id="concept-storage">
+                        <div class="service-icon-storage">
+                            <img src="assets/images/NicePng_storage.png" class="img-fluid">
+                        </div>
+
+                        <article>
+                            <h4><b>Storage</b></h4>
+                            <br>
+                            <p>For individual users or for businesses operating on a small scale, the storage that is 
+                               supplied standard with laptop or desktop computers...</p>
+                        </article>
+                        
+                        <div class="read-more-box">
+                            <!--A button class is used to link a pop up box-->
+                            <a class="button" href="#popup1">Read More</a>
+                          </div>
+                          <!--Below is the content of the pop up box.
+                              an overlay class is used to determine the styling and position of the pop up box
+                              in relation to the other elements on the page.-->
+                          <div id="popup1" class="overlay">
+                            <div class="popup">
+
+                              <!--Pop up heading-->
+                              <h2><b>Storage</b></h2>
+                              
+                              <!--'a' element used here as a close feature to the pop up box. 
+                                  the &times; places a little x "close" in the top corner of the pop up box-->
+                              <!--link to close "button is set to respective concept box so when clicked the page returns
+                                  to initial position-->
+                              <a class="close" href="#concept-storage">&times;</a>
+                              <div class="content">
+                               For individual users or for businesses operating on a small scale, the storage that is 
+                               supplied standard with laptop or desktop computers, together with USB hard drives or 
+                               similar devices, is perfectly fine to store data safely. At some point, however, 
+                               when the scale increases, these storage solutions are no longer fit to purpose.
+                               Many enterprises then need to expand their hardware to make sure they can store 
+                               all their data and/or migrate some resources into a colocation facility to increase 
+                               capacity or implement redundancy to manage any potential disasters. This combination of 
+                               large-scale, onsite and offsite storage solutions are essential for all enterprises
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="box b" id="concept-servers">
+                        <div class="service-icon-server">
+                            <img src="assets/images/NicePng_server-icon-png.png" class="img-fluid">
+                        </div>
+                        <article>
+                            <h4><b>Servers</b></h4>
+                            <br>
+                            <p>Servers are specialised computers that are dedicated to the management of network 
+                                resources. A server enables the controlled...</p>
+                        </article>
+                        <div class="read-more-box">
+                            <a class="button" href="#popup2">Read More</a>
+                          </div>
+                          <div id="popup2" class="overlay">
+                            <div class="popup">
+                              <h2><b>Servers</b></h2>
+                              <!--link to close "button is set to respective concept box-->
+                              <a class="close" href="#concept-servers">&times;</a>
+                              <div class="content">
+                                Servers are specialised computers that are dedicated to the management of network 
+                                resources. A server enables the controlled facilitation and management of complex 
+                                networks. No business that operates a network of computers and other devices 
+                                should be without a server. The server is essentially the command centre of your 
+                                IT infrastructure.
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="box c" id="concept-networking">
+                        <article>
+                            <div class="service-icon-net">
+                                <img src="assets/images/NicePng_network.png" class="img-fluid">
+                            </div>
+                            <h4><b>Networking</b></h4>
+                            <br>
+                            <p>At its simplest level, networking is a way of transporting and exchanging data between 
+                                workstations – or nodes – over a shared medium within...</p>
+                        </article>
+                        <div class="read-more-box">
+                            <a class="button" href="#popup3">Read More</a>
+                          </div>
+                          <div id="popup3" class="overlay">
+                            <div class="popup">
+                              <h2><b>Networking</b></h2>
+                              <a class="close" href="#concept-networking">&times;</a>
+                              <div class="content">
+                                At its simplest level, networking is a way of transporting and exchanging data between 
+                                workstations – or nodes – over a shared medium within an internal IT system. A good 
+                                network solution entails the design and construction of a network, as well as the 
+                                management, maintenance and operation of the infrastructure on an ongoing basis. 
+                                Networking architecture links devices and endpoints together through a local area network 
+                                (LAN) or to a larger network, such as the internet or wide area network. 
+                                Some information can be shared freely and other data needs discretionary access, 
+                                which comes with a variety of security measures to limit access.
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="box d" id="whats-hot">
+                        <!--article element use here to group the content of the box to allow for isolated styling-->
+                        <article>
+                            <h4><b>What's Hot</b></h4>
+                            <br>
+                            <h2><b>Hyperconvergence</b></h2>
+                            <br>
+                            <p> Hyperconvergence is a style of data centre architecture that simplifies the management of 
+                                systems by shifting the way that operators and administrators approach their systems. 
+                                Whereas data centres are traditionally viewed as complex networks of devices, nodes and 
+                                storage devices, the hyperconvergence approach recasts systems as transportation networks 
+                                for software and transactions. 
+                            </p>
+                        </article>
+                        <br>
+                            <!--figure element used here to utilize the figure caption feature for each image-->
+                            <figure class="figure">
+                                <img src="assets/images/HC-img.png" class="img-fluid" id="hyp-img"/>
+                                <figcaption class="figure-caption">To learn more about Hyperconvergence infrastructure click
+                                    <a href="https://www.hpe.com/za/en/integrated-systems/hyper-converged.html?jumpid=ps_z58yvmnb42_aid-520042863&ef_id=CjwKCAjwzMeFBhBwEiwAzwS8zNsxSmHU1-h3pfYmMHfIEv3r6iUndHkpzGo8HTL916E6LWG_101zwhoC6d8QAvD_BwE%3AG%3As&s_kwcid=AL%2113472%213%21522176890024%21p%21%21g%21%21hyperconvergence%2113130590923%21127970702048&media-id=%2Fza%2Fen%2Fresources%2Fintegrated-systems%2Fvideo%2F0b6c897d-56dc-4ead-9606-13739fbb4c52%2F_jcr_content.details.json" target="_blank"> here</a>
+                                        .
+                                </figcaption>
+                            </figure>
+                        <br>
+
+                    </div>
+
+                    <!--aside box for latest news-->
+                    <div class="box e" id="aside">
+                        <div class="service-icon">
+                            <img src="assets/images/NicePng_-bell-png_1758065.png" class="img-fluid"/>
+                        </div>
+                        <h4><b>Latest</b></h4>
+                      <br>
+                      <article>
+                        <h5>The Future Looks Hybrid</h5>
+                        <br>
+                        <p>A hybrid model provides your business with the structure and sociability of an office environment, 
+                            as well as the flexibility and independence of remote working. In the midst of a Microsoft Teams world, 
+                            a global pandemic and an economic downturn, how do we keep inspired, focused and connected to others? 
+                            How do we fight off the feelings of physical and mental exhaustion, isolation and burn-out? 
+                            Collaboration is the watchword, but is it working? And if so, for how much longer can organisations 
+                            and teams continue to work in this way? <a href="https://tarsusdistribution.co.za/the-future-of-work-looks-hybrid/" target="_blank">Read more ></a> 
+
+                      </article>
+                    </div>
+
+                    <!--Testimonial box-->
+                    <div class="box g" id="testimonial">
+                        <article>
+                            <h4><b>Our Testimonials</b></h4>
+                            <br>
+                            <p>"I have been a client of Techcrown Solutions (Pty) Ltd for over two years. Techrown has helped my business
+                               grow into the business of my dreams today. 
+                               <br>
+                               <br>
+                               With their proffessional staff always there to assist with our 
+                               every need. Their service and product quality has always been exceptional and we are proud to be associated
+                               with them. We highly reommend Techrown as the supplier of choice."
+
+                               <h6>Roderick Bunting</h6>
+                               <h6><em>R&L Books - CEO</em></h6>
+                            </p>
+                        </article>
+                    </div>
+
+                    <!--community box-->
+                    <div class="box f" id="community">
+                        <article>
+                            <h4><b>Community</b></h4>
+                            <br>
+                            <p>
+                                <!--links to each site/blog for community
+                                    _blank target use to tell the browaer to open a new tab when visiting the link-->
+                                
+                                <a href="https://techcrunch.com" target="_blank"><b>TechCrunch</b></a>
+                                <br>
+                                Founded by Michael Arrington and later sold to AOL, TechCrunch has remained as one of the leaders 
+                                covering tech industry news.
+                                <br>
+                                <br>
+                                <a href="http://www.zdnet.com/" target="_blank"><b>ZDNet</b></a>
+                                <br>
+                                Founded almost 30 years ago, Zdnet is a business technology news website that provides news, 
+                                analysis, and research on the the latest IT trends, issues and events for the technology professionals.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Footer -->
+                <footer class="page-footer unique-color-dark pt-4">
+                    <!-- Footer Links -->
+                    <div class="container-fluid text-center text-md-left">
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-6 mt-md-0 mt-3">
+    
+                                <!-- Content -->
+                                <h5 class="text-uppercase"><b>Techcrown Solutions</b></h5>
+                                <p id="company-paragraph">
+                                    Techrown is a privately owned South African company that is managed by a diverse and skilled team that 
+                                    comprehends the importance of building strong business relationships in order to realize long-term success. 
+                                    Techrown endeavors to inspire generations while embracing excellence, integrity and innovation. Techrown 
+                                    prides itself on its invigorating, hard-working culture and industry competitiveness.
+                                </p>
+                    
+                            </div>
+                            <!-- Grid column -->
+                    
+                            <hr class="clearfix w-100 d-md-none pb-3">
+                    
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+                    
+                                <!-- Links -->
+                                <h5 class="text-uppercase">Links</h5>
+                        
+                                <ul class="list-unstyled">
+                                    <li>
+                                    <a href="#theHeading">Home</a>
+                                    </li>
+                                    <li>
+                                    <a href="index-shop.html">Shop</a>
+                                    </li>
+                                    <li>
+                                    <a href="index-about.html">about us</a>
+                                    </li>
+                                    <li>
+                                    <a href="index-contact.html">Contact us</a>
+                                    </li>
+                                </ul>
+                    
+                            </div>
+                            <!-- Grid column -->
+                    
+                            <!-- Grid column -->
+                            <div class="col-md-3 mb-md-0 mb-3">
+                    
+                                <!-- Contact details -->
+                                <h5 class="text-uppercase">Contact</h5>
+                        
+                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                                <p>
+                                    <i class="fas fa-home mr-3"></i> Meredale, JHB 2091, GP</p>
+                                <p>
+                                    <i class="fas fa-envelope mr-3"></i> techrown@yahoo.com</p>
+                                <p>
+                                    <i class="fas fa-phone mr-3"></i> +27 83 397 8547</p>
+    
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        </div>
+    </body>
+</html>

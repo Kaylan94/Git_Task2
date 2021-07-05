@@ -1,0 +1,292 @@
+<!--
+    html for online store contact page
+-->
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Contact Us</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <script src="https://kit.fontawesome.com/5c2194ea1d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/styling-online-store-contact.css"/>
+
+    </head>
+
+    <body>
+        <div class="page-wrap">
+            <div class="grid-container">
+                <div class="header">
+
+                <!-- Navbar Menu -->
+
+                <!-- Below nav class with links is used for page navigation -->
+                    <nav class="main-nav" role="navigation">
+                    <!-- Unordered list of items to be displayed as nav items -->
+                        <ul class="main-menu">
+                            <!-- Icons added here from fontawesome.
+                                 aria-hidden set to true because these are used purely for aesthetic -->
+                            <li><a href="index-home.html"><i class="fas fa-home aria-hidden=true"></i>&nbsp; HOME|</a></li>
+                            <li><a href="index-shop.html"><i class="fas fa-shopping-cart aria-hidden=true"></i>&nbsp; SHOP|</a></li>
+                            <li><a href="index-home.html"><i class="fas fa-fire"></i>&nbsp; WHAT'S HOT?|</a></li>
+                            <li><a href="index-about.html"><i class="fas fa-hand-spock"></i>&nbsp; ABOUT US|</a></li>
+                            <li><a href="index-contact.html"><i class="fas fa-at"></i>&nbsp; CONTACT|</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Heading -->
+                <div id="landingBar" class="landingBar">
+                    <div class="col-md-12">
+                        <h1 id="theHeading"><b>Contact Us</b></h1>
+                    </div>
+                </div>
+            </div>
+            <!--This is a page break-->
+            <br>
+            <!--This inserts a horizontal line accros the page, styling in css file-->
+            <div class="line-dec"></div>
+            <!--a box class is used here to group the content and style it individually in the css file-->
+            <div class="box f">
+                <h1 id="company-label"><b>Techrown Solutions (Pty)Ltd</b></h1> 
+                <br>
+                <br>Techrown Solutions is a privately owned South African company that is managed by a diverse and skilled team that comprehends 
+                    the importance of building strong business relationships in order to realize long-term success. Techrown endeavors 
+                    to inspire generations while embracing excellence, integrity and innovation. Techrown prides itself on its 
+                    invigorating, hard-working culture and industry competitiveness.
+                    <br>
+                    <br>
+                    Founded in 2019, Techrown, a pioneering technology company that specializes in numerous vertical markets such as; 
+                    IT, Consumer Electronics, Digital Merchandise, Mobility & Mobility Repairs (Android and Apple) as well as other 
+                    business peripheral devices and consumables. The company offers and supplies end-to-end solutions predominantly to 
+                    small to medium businesses (SMB) as well as retailors. Techrown has a wide-ranging adaptive product portfolio that 
+                    is derived from market trends and is comprised of industry leading brands. Furthermore, Techrown strives to deliver 
+                    more value by providing excellent after sales services for all customers, suppliers and partners alike.       
+            </div>
+
+            <br>
+            <div class="line-dec"></div>
+            <br>
+            <br>
+            <div class="wrapper" id="main-content">
+
+            <!-- Classes row, container and col-mb- are used in conjuction with tags form, 
+            input, and fieldset to create a horizontal input form. -->
+            <div class="container">
+            
+            <!--form heading-->
+            <div class="section-heading">
+              <h2><b>Please fill in the required info below</b></h2>
+            </div>
+
+            <!--row and column classes below are used to specify the number of columns each should take up 
+                as well as the layout-->
+            <div class="row">
+              <div class="right-content">
+                <div class="container">
+                  <form id="contact" action="mailto:kaylanPalmer8@gmail.com" method="post">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <fieldset>
+                          <!--below elements are used to give the form's input fields their properties-->
+                          <input
+                            name="name"
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Your name..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="email"
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            placeholder="Your email..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="phone number"
+                            type="text"
+                            class="form-control"
+                            id="phone-number"
+                            placeholder="Phone..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="subject"
+                            type="text"
+                            class="form-control"
+                            id="subject"
+                            placeholder="Subject..."
+                            required
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-12">
+                        <fieldset>
+                          <textarea
+                            name="message"
+                            rows="6"
+                            class="form-control"
+                            id="message"
+                            placeholder="Your message..."
+                            required
+                          ></textarea>
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <p><b>Please select preferred contact method</b></p>
+                        <br>
+                        <!--Radio type button is used below to allow the user to click/choose 
+                            the approppriate option.
+                            Below is the properties for the radio input-->
+                        <input 
+                            type="radio"
+                            id="mail"
+                            name="preferred contact method"
+                            value="email"
+                        />
+                        <label for="email"><b>email me</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="phone"
+                            name="preferred contact method"
+                            value="phone"
+                        />
+                        <label for="phone"><b>call me</b></label>
+                      </div>
+                      <div class="col-md-6">
+                        <p><b>Please select one option</b></p>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="sales"
+                            name="related"
+                            value="sales"
+                        />
+                        <label for="sales"><b>sales query</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="account"
+                            name="related"
+                            value="account"
+                        />
+                        <label for="account"><b>account query</b></label>
+                        <br>
+                        <input 
+                            type="radio"
+                            id="other"
+                            name="related"
+                            value="other"
+                        />
+                        <label for="other"><b>other</b></label>
+                      </div>
+                      <div class="col-md-12">
+                        <fieldset>
+                          <!--a submit button is use here to submit the form.
+                              also includes its caption-->
+                          <button type="submit" id="form-submit" class="button">
+                            Send Message
+                          </button>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="page-footer unique-color-dark pt-4">
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-6 mt-md-0 mt-3">
+
+                            <!-- Content -->
+                            <h5 class="text-uppercase"><b>Techcrown Solutions</b></h5>
+                            <p id="company-paragraph">
+                                Techrown is a privately owned South African company that is managed by a diverse and skilled team that 
+                                comprehends the importance of building strong business relationships in order to realize long-term success. 
+                                Techrown endeavors to inspire generations while embracing excellence, integrity and innovation. Techrown 
+                                prides itself on its invigorating, hard-working culture and industry competitiveness.
+                            </p>
+                
+                        </div>
+                        <!-- Grid column -->
+                
+                        <hr class="clearfix w-100 d-md-none pb-3">
+                
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+                
+                            <!-- Links -->
+                            <h5 class="text-uppercase">Links</h5>
+                    
+                            <ul class="list-unstyled">
+                                <li>
+                                <a href="index-home.html">Home</a>
+                                </li>
+                                <li>
+                                <a href="index-shop.html">Shop</a>
+                                </li>
+                                <li>
+                                <a href="index-about.html">about us</a>
+                                </li>
+                                <li>
+                                <a href="index-contact.html">Contact us</a>
+                                </li>
+                            </ul>
+                
+                        </div>
+                        <!-- Grid column -->
+                
+                        <!-- Grid column -->
+                        <div class="col-md-3 mb-md-0 mb-3">
+                
+                            <!-- Contact details -->
+                            <h5 class="text-uppercase">Contact</h5>
+                    
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <i class="fas fa-home mr-3"></i> Meredale, JHB 2091, GP</p>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> techrown@yahoo.com</p>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> +27 83 397 8547</p>
+
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+                <!-- Footer Links -->
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,741 @@
+<!--
+    html for online store catalogue
+-->
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Techrown Shop</title>
+
+        <!-- Links to CSS files and Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="fontawesome.css"/>
+        <link rel="stylesheet" href="assets/css/styling-online-store-shop.css"/>
+        <!--The kit below is used for the icons in the nav bar-->
+        <script src="https://kit.fontawesome.com/5c2194ea1d.js" crossorigin="anonymous"></script>
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/JavaScript/scipt.js"></script>
+
+        <style>
+          .header{
+            position: fixed;
+            width: 100%;
+          }
+          #cart{
+            position: relative;
+            margin-left: 95%;
+            margin-top: 1%;
+            color:whitesmoke;
+            cursor: pointer;
+          }
+          #cart:before{
+            content: attr(data-count);
+            position: absolute;
+            color:whitesmoke;
+            right: 26px;
+            text-align: center;
+            top: -12px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            opacity: 0;
+          }
+          #cart.zero:before{
+            opacity: 1;
+          }
+          .select{
+            width:70%;
+            height: 580px;
+            background: #222;
+            position: absolute;
+            color:ghostwhite;
+            top: -1000px;
+            left: 20%;
+            transition: 0.5s;
+            overflow-y: auto;
+            margin: auto;
+          }
+          .select.display{
+            top: 20px;
+            right: -25px;
+          }
+          .select div table{
+            width:100%;
+            height:290px;
+            display:contents;
+            padding: 5px;
+            border: 1px solid #222;
+            position: relative;
+            margin: 5px auto;
+            color:ghostwhite;
+          }
+         
+          .select div h6,
+          .select div table button {
+            position:absolute;
+            left:45%;
+            top:50%;
+            color:rgb(255, 255, 255);
+            background: rgb(168, 4, 4);
+          }
+          .select table button {
+            margin-right: 100px;
+            cursor: pointer;
+            color:rgb(255, 255, 255);
+            background: rgb(168, 4, 4);
+          }
+
+          #checkOut{
+            position:relative;
+            color:rgb(255, 255, 255);
+            background: rgb(4, 168, 31);
+            height:40px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          .select div span{
+            display: none;
+          }
+          .addToCart {
+            cursor: pointer;
+            color:rgb(255, 255, 255);
+            background: rgb(168, 4, 4);
+          }
+        </style>
+    </head>
+
+    <body onload="loadContent()">
+      <a id="top"></a>
+      <div class="page-wrap">
+        <div class="grid-container">
+          <div class="header">
+            <h6 id="cart"><a href="#top"><i class="fas fa-shopping-cart aria-hidden=true"></a></i></h6>
+          <!-- Navbar Menu -->
+
+          <!-- Below nav class with links is used for page navigation -->
+            <nav class="main-nav" role="navigation">
+                <ul class="main-menu">
+                    <!-- Icons added here from fontawesome.
+                         aria-hidden set to true because these are used purely for aesthetic -->
+                    <li><a href="index-home.html"><i class="fas fa-home aria-hidden=true"></i>&nbsp; HOME|</a></li>
+                    <li><a href="index-shop.html"><i class="fas fa-shopping-cart aria-hidden=true"></i>&nbsp; SHOP|</a></li>
+                    <li><a href="index-home.html"><i class="fas fa-fire"></i>&nbsp; WHAT'S HOT?|</a></li>
+                    <li><a href="index-about.html"><i class="fas fa-hand-spock"></i>&nbsp; ABOUT US|</a></li>
+                    <li><a href="index-contact.html"><i class="fas fa-at"></i>&nbsp; CONTACT|</a></li>
+                </ul>
+            </nav>
+          
+
+          <!-- Heading -->
+          <div id="landingBar" class="landingBar">
+            <div class="col-md-12">
+              <h1 id="theHeading"><b>Techrown Solutions</b></h1>
+              
+            </div>
+          </div>
+        </div>
+          <!-- Product offering nav bar with icons 
+          <div class="poBar">
+            <div class="row">
+                 class col-md-4 is used here to create three evenly sized boxes.
+                     One for each service-icon 
+                <div class="col-md-4">
+                    <div class="service-icon">
+                      <a href="#storage"><img src="assets/images/NicePng_storage.png" class="img-fluid"></a>
+                    </div>
+                    <h4>Hard Drives</h4>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="service-icon">
+                    <a href="#servers"><img src="assets/images/NicePng_server-icon-png.png" class="img-fluid"></a>
+                  </div>
+                  <h4>Servers</h4>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="service-icon">
+                    <a href="#networking"><img src="assets/images/NicePng_network.png" class="img-fluid"></a>
+                  </div>
+                  <h4>Networking</h4>
+                </div>
+            </div>
+          </div>-->
+        </div>
+      
+
+
+        <!-- Container class with hover table to display products-->
+        <div class="container" id="shop">
+            <div class="category">
+              <h4 id="storage"><b>Storage</b></h4>
+            </div>
+            <!--a button and collapsible class is used to create a drop down of a table with the product details-->
+            <button type="button" class="collapsible">2TB Portable HDD <div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>1</td>
+                <td>
+                <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                    <figure class="figure">
+                        <!-- Img-thumbnail class used here to otimize the images within the table -->
+                        <!-- img-fluid is used to create a responsive image-->
+                        <img src="assets/images/seagate-basic-4tb-25-external-hdd-usb-30_450.png" 
+                        class="img-thumbnail img-fluid" id="img-hdd" alt="responsive img">
+                        <figcaption class="figure-caption">
+                            2TB Portable HDD
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    Manufacturer: Seagate
+                    <br>
+                    Capacity: 2TB
+                    <br>
+                    interface: USB 3.0
+                    <br>
+                    Size: 2.5"
+                </td>
+      
+                <td class="priceCol">1999.00</td>
+                
+                </tr>
+                </tbody>
+                </table> 
+            </div>
+
+            <!--a button and collapsible class is used to create a drop down of a table with the product details-->
+            <button type="button" class="collapsible">TB Desktop/Surveillance HDD <div class="view-more-text">(click to view more)</div> </button>
+            <div class="content">
+              <!--table-striped specifies the type of table utilised-->
+              <table class="table table-striped">
+                <!--table headings-->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>2</td>
+                    <td>
+                        <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                        <figure class="figure">
+                                <img src="assets/images/seagate-skyhawk-4tb-35-surveillance-drive.jpeg" 
+                            class="img-thumbnail img-fluid" id="img-skyhawk" alt="responsive img">
+                            <figcaption class="figure-caption">
+                                    4TB Desktop/Surveillance HDD
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        Manufacturer: Seagate
+                        <br>
+                        Capacity: 4TB
+                        <br>
+                        interface: SATA
+                        <br>
+                        Size: 3.5"
+                    </td>
+      
+                    <td class="priceCol">2799.00</td>
+      
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+            <!--a button and collapsible class is used to create a drop down of a table with the product details-->
+            <button type="button" class="collapsible">250GB NVMe SSD <div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <!--table headings-->
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>3</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="assets/images/NVMe M.2 V-NAND  SSD - Samsung.file" 
+                            class="img-thumbnail img-fluid" alt="responsive img">
+                                <figcaption class="figure-caption">
+                                    250GB NVMe SSD 
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            Manufacturer: Samsung
+                            <br>
+                            Capacity: 250GB
+                            <br>
+                            interface: NVMe M.2
+                        </td>
+                        <td class="priceCol">1150.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+      
+            <button type="button" class="collapsible">WD NAS (Network Attached Storage) MyCloud EX4100<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                <tr>
+                <td>4</td>
+                <td>
+                    <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                    <figure class="figure">
+                        <img src="assets/images/nas-network-attached-storage_200.jpeg" 
+                        class="img-thumbnail img-fluid" alt="responsive img">
+                        <figcaption class="figure-caption">
+                            NAS (Network Attached Storage) 
+                            <br>
+                            MyCloud EX4100
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    Manufacturer: Western Digital 
+                    <br>
+                    Interface: Gigabit Ethernet x 2
+                    <br>
+                    Power inlet (DC in) x 2
+                    <br>
+                    USB 3.0 expansion port x 2 rear
+                    <br>
+                    USB 3.0 port with direct copy x 1 front
+                    <br>
+                    Bays: 4 x 3.5 inch hard drive bays, hot swap
+                    <br>
+                    Processor: Marvell ARMADA 388 1.6 GHz dual-core
+                    <br>
+                    Disk Management: RAID: JBOD, spanning, 0/1/5/10 
+                    <br>
+                    RAID migration: Disk roaming; Array roaming
+                </td>
+                <td class="priceCol">8590.00</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+      
+            <div class="category">
+              <h4 id="servers"><b>Servers</b></h4>
+            </div>
+            
+            <button type="button" class="collapsible">Dell Power Edge T340 Server<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>5</td>
+                <td>
+                    <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                    <figure class="figure" id="servers">
+                          <img src="assets/images/DellEMC_t340.jpg" 
+                          class="img-thumbnail img-fluid" alt="responsive img">
+                          <figcaption class="figure-caption">
+                                Dell Power Edge T340 Server
+                          </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    Manufacturer: DellEMC 
+                    <br>
+                    Processor: Xeon E2224 Quad-Core 3.4GHz
+                    <br>
+                    Disk Management: H330 RAID
+                    <br>
+                    Form-Factor: Tower
+                    <br>
+                    Power Supply: 495W
+                </td>
+      
+                <td class="priceCol">24800.00</td>
+      
+                </tr>
+                </tbody>
+              </table>
+            </div>
+      
+            <button type="button" class="collapsible">HPE Proliant DL160 Gen10 Server<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <!--table headings-->
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+                </thead>  
+                <tbody>
+                <tr>
+                <td>6</td>
+                <td>
+                    <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                    <figure class="figure">
+                          <img src="assets/images/dl160gen104lff.png" 
+                          class="img-thumbnail img-fluid" alt="responsive img">
+                          <figcaption class="figure-caption">
+                                HPE Proliant DL160 Gen10 Server
+                          </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    Manufacturer: HPE
+                    <br>
+                    Processor: Xeon Bronze 3204 Hexa-Core 1.90GHz
+                    <br>
+                    Memory: 16GB RAM
+                    <br>
+                    Disk Management: Smart Array S100i SATA
+                    <br> 
+                    Form-Factor: Rack-Mount-1U
+                    <br>
+                    Power Supply: 500W (Hot plug/Low Halogen)
+                </td>
+      
+                <td class="priceCol">22500.00</td>
+      
+                </tr>
+                </tbody>
+              </table>
+            </div>
+      
+            <button type="button" class="collapsible">HPE Proliant ML350 Gen10 Server<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td>7</td>
+                <td>
+                    <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                    <figure class="figure">
+                        <img src="assets/images/HPE_ml350g10.jpg" 
+                        class="img-thumbnail img-fluid" alt="responsive img">
+                        <figcaption class="figure-caption">
+                            HPE Proliant ML350 Gen10 Server
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    Manufacturer: HPE 
+                    <br> 
+                    Processesor: Xeon Silver 4210 Deca(10)-Core 2.20GHz
+                    <br>
+                    Memory: 16GB RAM
+                    <br>
+                    Bays: 8 x 2.5" Hot Plug
+                    <br>
+                    Disk Management: Smart Array P408i-a SR
+                    <br>
+                    Form-Factor: Tower
+                    <br>
+                    Power Supply: 800W (Hot plug/Low Halogen)
+                </td>
+                      
+                <td class="priceCol">37100.00</td>
+      
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--heading for each product group is given a class category for styling of these elements on the page-->
+            <div class="category">
+              <h4 id="networking"><b>Networking</b></h4>
+            </div>
+      
+            <button type="button" class="collapsible">D-Link DGS-1016D Switch<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>8</td>
+                  <td>
+                      <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                      <figure class="figure" id="networking">
+                            <img src="assets/images/d-link-dgs-1016d-16-port-gigabit-unmanaged-switch_450.jpeg" 
+                            class="img-thumbnail img-fluid" alt="responsive img">
+                            <figcaption class="figure-caption">
+                                  D-Link DGS-1016D Switch
+                            </figcaption>
+                      </figure>
+                  </td>
+                  <td>
+                      Manufacturer: D-link 
+                      <br>
+                      Ports: 16
+                      <br>
+                      Connectivity: Gigabit Ethernet Unmanaged
+                      <br>
+                      Form-Factor: Desktop/Rack-Mountable
+                  </td>
+                        
+                  <td class="priceCol">2680.00</td>
+      
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      
+            <button type="button" class="collapsible">TP-Link Archer MR200 WiFi Router<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>9</td>
+                  <td>
+                      <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                      <figure class="figure">
+                            <img src="assets/images/tp-link-archer-mr200-wireless-dual-band-4g-lte-router_250.jpeg" 
+                            class="img-thumbnail img-fluid" alt="responsive img">
+                            <figcaption class="figure-caption">
+                                  TP-Link Archer MR200 WiFi Router
+                            </figcaption>
+                      </figure>
+                  </td>
+                  <td>
+                      Manufacturer: TP-Link 
+                      <br>
+                      Network: Dual Band 4G LTE 
+                  </td>
+                        
+                  <td class="priceCol">2044.00</td>
+      
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      
+            <button type="button" class="collapsible">TP-Link PCI Express WiFi Adaptor<div class="view-more-text">(click to view more)</div></button>
+            <div class="content">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price (Rands)</th>
+                    </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td>10</td>
+                  <td>
+                      <!-- Below an image is embedded within <figure> tags ito utilise the figure caption class -->
+                      <figure class="figure">
+                          <img src="assets/images/tp-link-tl-wn881nd-300mbps-pci-express-wifi-adaptor.jpeg" 
+                          class="img-thumbnail img-fluid" alt="responsive img">
+                          <figcaption class="figure-caption">
+                              TP-Link PCI Express WiFi Adaptor
+                          </figcaption>
+                          </figure>
+                  </td>
+                  <td>
+                      Manufacturer: TP-Link 
+                      <br> 
+                      Speed: 300MBPS
+                      <br>
+                      Interface: PCI Express 
+                  </td>
+                    
+                  <td class="priceCol">292.00</td>
+                  
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="select">
+              <button id="checkOut">Check Out</button>
+            </div>
+          </div>
+          
+        <!--this inserts a page break-->
+        <br>
+        <br>
+        <!--This inserts a horizontal line accros the page, styling in css file-->
+        <div class="line-dec"></div>
+        <br>
+        <br>
+          <!-- Product offering nav bar with icons -->
+          <div class="grid-container">
+          <div class="poBar">
+            <div class="row">
+                <!-- class col-md-4 is used here to create three evenly sized boxes.
+                     One for each service-icon -->
+                <div class="col-md-4">
+                    <div class="service-icon">
+                      <a href="#storage"><img src="assets/images/NicePng_storage.png" class="img-fluid"></a>
+                    </div>
+                    <h4>Hard Drives</h4>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="service-icon">
+                    <a href="#servers"><img src="assets/images/NicePng_server-icon-png.png" class="img-fluid"></a>
+                  </div>
+                  <h4>Servers</h4>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="service-icon">
+                    <a href="#networking"><img src="assets/images/NicePng_network.png" class="img-fluid"></a>
+                  </div>
+                  <h4>Networking</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+        <!-- Footer -->
+        <footer class="page-footer unique-color-dark pt-4">
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3">
+
+                        <!-- Content -->
+                        <h5 class="text-uppercase"><b>Techcrown Solutions</b></h5>
+                        <p id="company-paragraph">
+                            Techrown is a privately owned South African company that is managed by a diverse and skilled team that 
+                            comprehends the importance of building strong business relationships in order to realize long-term success. 
+                            Techrown endeavors to inspire generations while embracing excellence, integrity and innovation. Techrown 
+                            prides itself on its invigorating, hard-working culture and industry competitiveness.
+                        </p>
+            
+                    </div>
+                    <!-- Grid column -->
+            
+                    <hr class="clearfix w-100 d-md-none pb-3">
+            
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+            
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                            <a href="index-home.html">Home</a>
+                            </li>
+                            <li>
+                            <a href="#theHeading">Shop</a>
+                            </li>
+                            <li>
+                            <a href="index-about.html">about us</a>
+                            </li>
+                            <li>
+                            <a href="index-contact.html">Contact us</a>
+                            </li>
+                        </ul>
+            
+                    </div>
+                    <!-- Grid column -->
+            
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+            
+                        <!-- Contact details -->
+                        <h5 class="text-uppercase">Contact</h5>
+                
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <i class="fas fa-home mr-3"></i> Meredale, JHB 2091, GP</p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> techrown@yahoo.com</p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> +27 83 397 8547</p>
+
+                    </div>
+                </div>
+        </footer>
+
+    </body>
+    <!--script below is used to give the collapsible table its properties-->
+    <script> var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script>
+
+</html>

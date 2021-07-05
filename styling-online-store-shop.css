@@ -1,0 +1,279 @@
+/*
+
+Css rules and styling
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url(fontawesome.css);
+
+/* Basic page styling specifying font and layout*/
+body {
+    font-family: monospace;
+    width: 100%;
+    margin: 0%;
+    position: relative;
+
+}
+
+/* The scroll behaviour is changed here to give it a smoother feel */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Grid display here allows for explicit placement of elements */
+.grid-container {
+    display: grid;
+}
+
+.header {
+    background: rgb(12, 12, 27);
+    box-shadow: 5px rgb(35, 197, 3)
+}
+
+/* The below styles the background of the page */
+.page-wrap {
+    background: ghostwhite;
+    background-size: cover;
+    width: 100%;
+    align-content: center;
+    overflow-x: hidden;
+}
+
+/* NAV styling */
+.main-nav {
+    text-align: justify;
+    grid-row: 1;
+    background: rgb(35, 197, 3);
+}
+
+
+/*The below styling is applied to the list elements in the main-nav.
+  List items will be aligned horizontally */
+.main-nav ul li {
+    display: inline-block;
+    padding: 5px 8px;
+}
+
+
+/* The below styling is applied to the links/list elements. */
+
+.main-nav li a {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 650;
+    color: rgb(0, 0, 0);
+    width: auto;
+    /* Here the transition property will come into affect when the hover feature is applied,
+       giving the transition a smoother look and feel*/
+    transition: all 0.5s;
+    /* This removes the horizontal rule underneath each item in the list */
+    text-decoration: none;
+}
+
+
+/* Heading */
+
+/* Landing bar styling specifying its position on the grid, background color, box size, 
+   text alignment and box shadow. */
+.landingBar {
+    background: rgb(12, 12, 27);
+    background-size: cover;
+    grid-row: 2;
+    height: 125px;
+    text-align: center;
+}
+
+/* All H1 elements will have the below styling*/
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    /* Padding below is specified ito align element optimally */
+    padding-top: 25px;
+    padding-left: 3%;
+}
+
+/* Product offering bar */
+/* Here the position on the grid is specified, its box size and how the elements within 
+   will be displayed */
+.poBar {
+    grid-row: 4;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    /* This specifies that the items in the poBar will be displayed horizontally */
+    display: inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+
+}
+
+/* The properties of the h4 element in the poBAr class is specified here.
+   The text aligned to the bottom-center of the box (respectively), and 
+   the text color is dark blue. */
+.poBar h4 {
+    margin-bottom: 0px;
+    text-align: center;
+    color: rgb(12, 12, 27);
+}
+
+/* The img element within the service-icon class is given its properties here.
+   Its dimension 70x70 give it a square border.
+   The margin properties align it to the center of the block.
+   Here the transition property will come into affect when the hover feature is applied,
+   giving the transition a smoother look and feel
+    */
+.service-icon img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+}
+
+/* Hover behaviour for icons in the poBar.
+   The cursor will change to a pointer and
+   a box shadow will appear*/
+
+.service-icon img:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px rgb(12, 59, 47);
+    border-radius: 3px;
+}
+
+/* Hover behaviour for nav list items.
+   The text will change to white and 
+   the cursor will change to a pointer*/
+
+.main-nav li:hover a,
+.main-nav li.active a {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/*The below styling specifies the a line rule type of element*/
+.line-dec {
+    width: 90%;
+    height: 10px;
+    background-color: rgb(35, 197, 3);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Thumbnail styling, dimensions transition behaviour and its opacity*/
+
+.img-thumbnail {
+    height: 180px;
+    width: 180px;
+    opacity: 50%;
+    transition: all 0.25s;
+}
+
+/* Responsive image */
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumbnail .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Required individual styling for product thumbnails using ID selectors*/
+
+#img-hdd {
+    height: 180px;
+    width: 180px;
+}
+
+#img-skyhawk {
+    height: 180px;
+    width: 140px;
+    transition: all 0.25s;
+}
+
+/* figure caption in hover table */
+
+.figure-caption {
+    text-align: center;
+}
+
+/* Hover behaviour and styling for hover-table.
+   The color that will appear in the cells, when hovered over
+   is changed to silver, the cursor to a pointer and a slight
+   box shadow */
+
+.img-thumbnail:hover {
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.2);
+    box-shadow: 2px 2px 2px darkslategrey;
+    cursor: pointer;
+    opacity: 100%;
+}
+
+#category {
+    width: 90%;
+    background-color: rgb(2, 5, 20);
+    color: ghostwhite;
+    margin: 10px auto;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+
+/*styling below moves the elements of this class to the right*/
+.view-more-text {
+    float: right;
+}
+
+/* Styling for button */
+button {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+    background-color: rgb(33, 69, 109);
+    color: ghostwhite;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+footer {
+    color: rgb(131, 125, 125);
+    background-color: rgb(12, 12, 27);
+}

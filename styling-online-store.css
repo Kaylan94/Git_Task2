@@ -1,0 +1,600 @@
+/*
+
+CSS Rules and Styling for Online Store home page
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url(fontawesome.css);
+
+/* Basic page styling specifying font and layout*/
+body {
+    font-family: monospace;
+    width: 100%;
+    margin: 0%;
+    position: relative;
+    overflow-x: hidden;
+    align-content: center;
+}
+
+/* The scroll behaviour is changed here to give it a smoother feel */
+html {
+    scroll-behavior: smooth;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.header {
+    background: rgb(12, 12, 27);
+    box-shadow: 5px 5px 5px 5px rgb(35, 197, 3);
+}
+
+/* The below styles the background of the page */
+.page-wrap {
+    background-color: rgb(12, 12, 27);
+    background-size: cover;
+    width: 100%;
+}
+
+/* NAV styling */
+.main-nav {
+    text-align: left;
+    grid-row: 1;
+    background: rgb(35, 197, 3);
+}
+
+
+/*The below styling is applied to the list elements in the main-nav.
+  List items will be aligned horizontally */
+.main-nav ul li {
+    display: inline-block;
+}
+
+
+/* The below styling is applied to the links/list elements. */
+.main-nav li a {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 650;
+    color: rgb(0, 0, 0);
+    width: auto;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+
+/* Heading */
+
+.landingBar {
+    background: rgb(12, 12, 27);
+    background-size: cover;
+    grid-row: 2;
+    height: 125px;
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    padding-top: 25px;
+    padding-left: 3%;
+}
+
+
+
+/* Slideshow container 
+    styling below determines the container dimensions 
+    and padding*/
+.fling-minislide {
+    width: 90%;
+    height: 0px;
+    padding-bottom: 40%;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* minislide (carousel) image styling. 
+   The position absolute so that it does not move in relation to 
+   other page elements. the animantion duration is set to 40 seconds.
+   There is a saturation filter applied to the images to give the colors
+   more pop. A border is applied for a more appealing look.*/
+.fling-minislide img {
+    position: absolute;
+    animation: fling-minislide 40s infinite;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    filter: saturate(1.1);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(12, 12, 27);
+}
+
+/*The keyframes determine the starting and end point of the smooth transition
+  of the animation. The percentages are the points of progression in the animation
+  which determine the opacity change. 
+  */
+@keyframes fling-minislide {
+    25% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+}
+
+/*8th image - transition delay 0 seconds*/
+.fling-minislide img:nth-child(8) {
+    animation-delay: 0s;
+}
+
+/*7th image - transition delay 5 seconds*/
+.fling-minislide img:nth-child(7) {
+    animation-delay: 5s;
+}
+
+/*6th image - transition delay 10 seconds*/
+.fling-minislide img:nth-child(6) {
+    animation-delay: 10s;
+}
+
+/*5th image - transition delay 15 seconds*/
+.fling-minislide img:nth-child(5) {
+    animation-delay: 15s;
+}
+
+/*4th image - transition delay 20 seconds*/
+.fling-minislide img:nth-child(4) {
+    animation-delay: 20s;
+}
+
+/*3rd image - transition delay 25 seconds*/
+.fling-minislide img:nth-child(3) {
+    animation-delay: 25s;
+}
+
+/*2nd image - transition delay 30 seconds*/
+.fling-minislide img:nth-child(2) {
+    animation-delay: 30s;
+}
+
+/*1st image - transition delay 35 seconds*/
+.fling-minislide img:nth-child(1) {
+    animation-delay: 35s;
+}
+
+/*The below styling specifies the a line rule type of element*/
+.line-dec {
+    width: 90%;
+    height: 10px;
+    background-color: rgb(35, 197, 3);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+
+/* Product offering bar */
+/* Here the position on the grid is specified, its box size and how the elements within 
+   will be displayed */
+.poBar {
+    grid-row: 4;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+/* The properties of the h4 element in the poBAr class is specified here.
+   The text aligned to the bottom-center of the box (respectively), and 
+   the text color is dark blue. */
+.poBar h4 {
+    margin-bottom: 0px;
+    text-align: center;
+    color: rgb(12, 12, 27);
+}
+
+
+/* The img element within the service-icon class is given its properties here.
+   Its dimension 70x70 give it a square border.
+   The margin properties align it to the center of the block.
+   Here the transition property will come into affect when the hover feature is applied,
+   giving the transition a smoother look and feel
+    */
+.service-icon img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+    border-radius: 3px;
+}
+
+.service-icon-net img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+    border-radius: 3px;
+}
+
+.service-icon-storage img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+    border-radius: 3px;
+}
+
+.service-icon-server img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+    border-radius: 3px;
+}
+
+/* Hover behaviour for icons in the poBar.
+   The cursor will change to a pointer and
+   a box shadow will appear*/
+
+.service-icon-storage img:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px rgb(35, 197, 3);
+    border-radius: 3px;
+}
+
+.service-icon-server img:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px rgb(245, 229, 4);
+    border-radius: 3px;
+}
+
+.service-icon-net img:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px rgb(0, 217, 255);
+    border-radius: 3px;
+}
+
+.service-icon img:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px rgb(114, 106, 110);
+    border-radius: 3px;
+}
+
+/* Hover behaviour for nav list items.
+   The text will change to white and 
+   the cursor will change to a pointer*/
+.main-nav li:hover a,
+.main-nav li.active a {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* Thumbnail styling, dimensions transition behaviour and its opacity*/
+.img-thumbnail {
+    height: 180px;
+    width: 180px;
+    transition: all 0.25s;
+}
+
+/* Responsive image */
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumbnail .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* figure caption in hover table */
+
+.figure-caption {
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+/*box styling: 
+  text and background color set to white and navy blue, respectively.
+  a border-radius applied to round off the edges.
+  a margin and padding applied for spacing & position of content 
+  Text within box will be aligned to the center*/
+.box {
+    color: rgb(231, 231, 243);
+    background-color: rgba(12, 12, 27, 0.973);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 25px;
+    text-align: center;
+}
+
+/*h4 and h5 headings in box class will be uppercase and
+aliged to the center*/
+.box h4,
+.box h5 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*wrapper styling and background animation*/
+.wrapper {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: auto;
+    /*below specifies the duration of the animation - 20 seconds*/
+
+    animation: bgcolor infinite 20s;
+}
+
+/*the below properties for the background color determine that
+  at each stage of animation's progression(%) the color it will
+  transition to*/
+@keyframes bgcolor {
+    0% {
+        background: #23c503;
+
+    }
+
+    20% {
+        background: #f5e504;
+    }
+
+    40% {
+        background: #00d9ff;
+    }
+
+    60% {
+        background: #c305ed;
+    }
+
+    80% {
+        background: #848385;
+    }
+
+    100% {
+        background: #23c503;
+    }
+
+}
+
+/*box a styling
+  the box will take up 3 columns on the grid in the first row.
+  text = white
+  dark-blue box shadow applied*/
+.a {
+    grid-column: 1/4;
+    grid-row: 1;
+    color: ghostwhite;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+/* heading for box a = green*/
+.a h4 {
+    color: rgb(35, 197, 3);
+}
+
+/*box b styling
+  the box will take up the next 3 columns (after box a) on the grid in the first row.
+  text = white
+  dark-blue box shadow applied*/
+.b {
+    grid-column: 4/7;
+    grid-row: 1;
+    color: ghostwhite;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+/* heading for box a = yellow*/
+.b h4 {
+    color: rgb(245, 229, 4);
+}
+
+
+/*box c styling
+  the box will take up the next 3 columns(after box b) on the grid in the first row.
+  text = white
+  dark-blue box shadow applied*/
+.c {
+    grid-column: 7/10;
+    grid-row: 1;
+    color: ghostwhite;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+/* heading for box a = light-blue*/
+.c h4 {
+    color: rgb(0, 217, 255);
+}
+
+/*box d styling
+  the box will take up 9 columns and 8 rows, starting from the second row.
+  text = white
+  dark-blue box shadow applied*/
+.d {
+    grid-column: 1/10;
+    grid-row: 2/10;
+    color: ghostwhite;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+/* heading for box d = red*/
+.d h4 {
+    color: red;
+}
+
+/*hyperconvergence image given a padding of 70px for suitable positioning*/
+#hyp-img {
+    padding-left: 70px;
+}
+
+/*box e styling
+  the box will take up 9 columns and 9 rows, starting from the tenth row.
+  text = light-blue (text color is different to other boxes to stand out)
+  dark-blue box shadow applied*/
+.e {
+    grid-column: 10;
+    grid-row: 1/10;
+    color: rgb(0, 176, 230);
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+}
+
+/* heading for box d = grey*/
+.e h4 {
+    color: gray;
+}
+
+/*box f styling
+  the box will take up 5 columns and 1 row (row 10)
+  text = white
+  dark-blue box shadow applied*/
+.f {
+    grid-column: 1/6;
+    grid-row: 10;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+    color: ghostwhite;
+}
+
+/*box g styling
+  the box will take up the next 5 columns after box f in row 10
+  text = white
+  dark-blue box shadow applied*/
+.g {
+    grid-column: 6/11;
+    grid-row: 10;
+    box-shadow: 5px 5px 5px 5px rgb(12, 12, 27);
+    color: ghostwhite;
+}
+
+/*styling applied to read-more-box:
+  the width is set to auto to fit content.
+  margin set to 0 auto for centering.
+  a border-radius applied to round off the box.
+  the background clip is set to padding box which
+  determines that the background should onlt be extended 
+  to the padding box.*/
+.read-more-box {
+    width: auto;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+/* The class selector, overlay, is used to place the popup box over the top 
+   of the other elements on the page.  */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    /* Its initially hidden */
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Once the box is clicked on the overlay becomes visible */
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* The popup box properties are specified here.
+   its position, background color, size and transition behaviour */
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(102, 93, 90);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 2s ease-in-out;
+}
+
+
+/* The h2 element within the popup class is colored grey, 
+   positioned to the top of the box and
+   its font is changed. */
+.popup h4 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+/*postion  and styling of x (close) feature on pop up box.
+  position = top right and will not change
+  200ms set for duration of transition.
+  */
+.popup .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    transition: all 200ms;
+    font-size: 25px;
+    font-weight: lighter;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.popup .close:hover {
+    color: rgb(12, 12, 27);
+}
+
+.popup .content {
+    max-height: 50%;
+    width: auto;
+    overflow: auto;
+}
+
+footer {
+    color: rgb(131, 125, 125);
+}
+
+#company-paragraph {
+    text-align: justify;
+}
